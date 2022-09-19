@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "TestPSA"
 include ':app'
+include ':core'
