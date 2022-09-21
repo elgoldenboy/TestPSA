@@ -1,19 +1,27 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs.kotlin'
 }
+apply from: '../dependencies.gradle'
 
 android {
-    compileSdk 31
+    compileSdk versions.compileSdk
 
     defaultConfig {
         applicationId "benhamida.jassem.testpsa"
-        minSdk 23
-        targetSdk 31
-        versionCode 1
-        versionName "1.0"
+        minSdk versions.minSdk
+        targetSdk versions.targetSdk
+        versionCode versions.versionCode
+        versionName versions.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    dataBinding {
+        android.buildFeatures.dataBinding = true
     }
 
     buildTypes {
@@ -28,17 +36,35 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+        freeCompilerArgs += [
+                "-Xjvm-default=all",
+        ]
     }
 }
 
 dependencies {
     implementation project(path: ':core')
 
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.4.2'
-    implementation 'com.google.android.material:material:1.6.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation "androidx.core:core-ktx:$versions.coreVersion"
+    implementation "androidx.appcompat:appcompat:$versions.appcompatVersion"
+    implementation "com.google.android.material:material:$versions.materialVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$versions.constraintlayoutVersion"
+    //coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutinesCoreVersion"
+    //gson
+    implementation "com.google.code.gson:gson:$versions.gsonVersion"
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:$versions.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$versions.retrofitVersion"
+    //navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$versions.navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$versions.navigationVersion"
+    //room
+  /*  implementation "androidx.room:room-runtime:$versions.roomVersion"
+    annotationProcessor "androidx.room:room-compiler:$versions.roomVersion"
+    kapt "androidx.room:room-compiler:$versions.roomVersion"
+    implementation "androidx.room:room-ktx:$versions.roomVersion"
+*/
+    testImplementation "junit:junit:$versions.junitVersion"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$versions.mockitoVersion"
 }

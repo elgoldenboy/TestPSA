@@ -1,0 +1,33 @@
+ext.versions = [
+
+        // Application
+        minSdk                 : 23,
+        compileSdk             : 31,
+        targetSdk              : 31,
+        versionCode            : 1,
+        versionName            : "1.0",
+
+        // ui
+        coreVersion            : '1.8.0',
+        appcompatVersion       : '1.4.1',
+        materialVersion        : '1.6.1',
+        constraintlayoutVersion: '2.1.4',
+        navigationVersion      : '2.5.2',
+
+        // networking
+        retrofitVersion        : '2.9.0',
+
+        // gson
+        gsonVersion            : '2.9.1',
+
+        // coroutines
+        coroutinesCoreVersion  : '1.6.4',
+
+        // room
+        roomVersion  : '2.4.2',
+
+        // test
+        junitVersion           : '4.13.2',
+        mockitoVersion         : '2.8.0',
+        coroutinesTestVersion  : '1.6.4'
+]

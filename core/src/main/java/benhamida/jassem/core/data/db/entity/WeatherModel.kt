@@ -1,6 +1,12 @@
-package benhamida.jassem.core.domain.model
+package benhamida.jassem.core.data.db.entity
 
-data class Weather (
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+data class WeatherModel (
+    @PrimaryKey(autoGenerate = true)
+    var id: Long = 0,
     var city_id: Long = 0,
     var main: String? = null,
     var description: String? = null,

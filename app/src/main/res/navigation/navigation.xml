@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/cities_list_fragment">
+
+    <fragment
+        android:id="@+id/cities_list_fragment"
+        android:name="benhamida.jassem.testpsa.ui.list_cities.CitiesListFragment"
+        android:label="Cities"
+        tools:layout="@layout/fragment_list_cities" >
+        <action
+            android:id="@+id/action_go_to_weather_data"
+            app:destination="@id/weather_data_fragment" />
+        <action
+            android:id="@+id/action_go_to_add_city"
+            app:destination="@id/add_city_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weather_data_fragment"
+        android:name="benhamida.jassem.testpsa.ui.weather_data.WeatherDataFragment"
+        android:label="Weather Data"
+        tools:layout="@layout/fragment_weather_data" >
+        <argument
+            android:name="city"
+            app:argType="benhamida.jassem.core.domain.model.City" />
+    </fragment>
+    <fragment
+        android:id="@+id/add_city_fragment"
+        android:name="benhamida.jassem.testpsa.ui.add_city.AddCityFragment"
+        android:label="Add City"
+        tools:layout="@layout/fragment_add_city" />
+</navigation>
