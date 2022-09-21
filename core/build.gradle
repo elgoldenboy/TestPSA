@@ -51,4 +51,5 @@ dependencies {
     kapt "androidx.room:room-compiler:$versions.roomVersion"
 
     testImplementation "junit:junit:$versions.junitVersion"
+    testImplementation "io.mockk:mockk:$versions.mockkVersion"
 }

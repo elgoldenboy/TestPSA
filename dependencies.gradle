@@ -29,5 +29,6 @@ ext.versions = [
         // test
         junitVersion           : '4.13.2',
         mockitoVersion         : '2.8.0',
-        coroutinesTestVersion  : '1.6.4'
+        coroutinesTestVersion  : '1.6.4',
+        mockkVersion  : '1.12.3'
 ]
